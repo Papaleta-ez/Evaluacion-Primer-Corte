@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 
 class ValidadorFecha
 {
@@ -16,8 +16,10 @@ class ValidadorFecha
 
     static bool DiaValido(int dia, int mes, int año)
     {
-        int[] diasPorMes = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        if (EsBisiesto(año)) diasPorMes[1] = 29;
+        int[] diasPorMes = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
+        if (EsBisiesto(año)) diasPorMes[1] = 29; // febrero
+
         return dia >= 1 && dia <= diasPorMes[mes - 1];
     }
 
@@ -25,8 +27,10 @@ class ValidadorFecha
     {
         Console.Write("Ingresa el día: ");
         string entradaDia = Console.ReadLine()!;
+
         Console.Write("Ingresa el mes: ");
         string entradaMes = Console.ReadLine()!;
+
         Console.Write("Ingresa el año: ");
         string entradaAño = Console.ReadLine()!;
 
@@ -56,6 +60,6 @@ class ValidadorFecha
 
     static void Main(string[] args)
     {
-        ValidarFecha();
+        ValidarFecha(); // Llamada al validador
     }
 }
