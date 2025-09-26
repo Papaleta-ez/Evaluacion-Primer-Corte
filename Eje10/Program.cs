@@ -27,3 +27,24 @@ class Capicua
         return numeroOriginal == numeroInvertido;
     }
 }
+ static void Main(string[] args)
+    {
+        Console.Write("Ingresa un número entero positivo: ");
+        string entrada = Console.ReadLine();
+
+        if (int.TryParse(entrada, out numeroOriginal) && numeroOriginal > 0)
+        {
+            if (EsCapicua())
+            {
+                Console.WriteLine($"El número {numeroOriginal} es capicúa.");
+            }
+            else
+            {
+                Console.WriteLine($"El número {numeroOriginal} no es capicúa.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Entrada inválida. Debes ingresar un número entero positivo.");
+        }
+    }
